@@ -13,16 +13,23 @@ RULES------------------------------------------------------------------
 4.Always Respect HTTP Meyhods
 
 GET/User--- Read the user data and return the data.
+
 POST/User-- Handle new User Creation.
+
 PATCH/User--Update The User Details.
+
 DELETE/User--Delete User.
 
 --------------------------------------------------------------
 |           DONT Do This Mistake
 |     1. POST/Update User --->    Update user Profile
+|
 |     2.Post/Create User ---->    Create New User
+|
 |     3.GET/getUser     ----->    Get User Detail
+|
 |     4.POST/Delete User ---->    Delete User
+|
 |
 |    WE HAVE METHODS THE WHY USE POST FOR EVERY THING
 |     WE RESPECT THOSE HTTP METHOS
