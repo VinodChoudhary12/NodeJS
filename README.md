@@ -12,10 +12,10 @@ RULES------------------------------------------------------------------
     
 4.Always Respect HTTP Meyhods
 
-GET/User--- Read the user data and return the data
+GET/User--- Read the user data and return the data.
 POST/User-- Handle new User Creation.
-PATCH/User--Update The User Details
-DELETE/User--Delete User
+PATCH/User--Update The User Details.
+DELETE/User--Delete User.
 
 --------------------------------------------------------------
 |           DONT Do This Mistake
