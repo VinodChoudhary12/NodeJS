@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<input type="text" id="aadhaarNumber" placeholder="Enter Aadhaar Number">
+<button onclick="verifyAadhaarNumber()">Verify Aadhaar Number</button>
+
+<script>
+    const url = 'https://aadhaar-number-verification.p.rapidapi.com/Uidverifywebsvcv1/Getcaptcha';
+    const apiKey = '5b3a1c2614msha5308c5cc491133p17122ejsnc4350853e8b0'; // Your RapidAPI Key
+    const options = {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/x-www-form-urlencoded',
+            'X-RapidAPI-Key': apiKey,
+            'X-RapidAPI-Host': 'aadhaar-number-verification.p.rapidapi.com'
+        },
+        body: new URLSearchParams({
+            clientid: '111',
+            txn_id: '985656',
+            method: 'getcaptcha'
+        })
+    };
+
+    async function verifyAadhaarNumber() {
+        const aadhaarNumber = document.getElementById('aadhaarNumber').value;
+
+        if (!aadhaarNumber) {
+            console.error('Aadhaar number is required.');
+            return;
+        }
+
+        options.body.set('aadhaar_number', aadhaarNumber);
+
+        try {
+            const response = await fetch(url, options);
+            const result = await response.text();
+            console.log(result);
+            // Handle the result here (e.g., display to user)
+        } catch (error) {
+            console.error(error);
+            // Handle errors (e.g., display error message to user)
+        }
+    }
+
+</script>
+
+<body>
+
+</body>
+
+</html>
