@@ -1,0 +1,2 @@
+use sequlize;
+show tables;
